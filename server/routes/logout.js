@@ -28,9 +28,6 @@ router.post('/', async (req, res) => {
             return res.status(401).json({ error: 'Invalid logout request' });
         }
 
-        // Delete the session entry in the Sanity database by session ID
-        await client.delete(session._id);
-
         // Perform any other necessary tasks for logging out
         // Clear the session cookie on the client-side
         res.clearCookie('sessionID');

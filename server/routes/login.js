@@ -61,7 +61,8 @@ router.post('/', async (req, res) => {
     return res.cookie('sessionID', newSession.sessionID, { httpOnly: true , origin:'localhost:3000', sameSite: 'lax', secure:false }).status(200).json({
       success: true, user: {
         role: user.role.name,
-        username: user.username
+        username: user.username,
+        _sid: newSession._id
       }
     });
 

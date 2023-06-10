@@ -17,6 +17,12 @@ export default{
             name:'userId',
             title:'User ID',
             type:'string'
+        },
+        {
+            name:'products',
+            title:'Products',
+            type:'array',
+            of: [{type: 'string'}],
         }
     ]
 }

@@ -9,7 +9,7 @@ export const registerUser = async (userData) => {
 };
 
 export const loginUser = async (userData) => {
-  const response = await axios.post(`${API_URL}/api/login`, userData, {withCredentials:true});
+  const response = await axios.post(`${API_URL}/api/login`, userData, { withCredentials: true });
   return response.data;
 };
 
@@ -19,6 +19,17 @@ export const logoutUser = async () => {
 };
 
 export const validateToken = async () => {
-  const response = await axios.post(`${API_URL}/api/validate`,null, {withCredentials:true})
+  const response = await axios.post(`${API_URL}/api/validate`, null, { withCredentials: true })
+  return response.data
+}
+
+export const visitProduct = async (data) => {
+  const response = await axios.post(`${API_URL}/api/visitProduct`, data, { withCredentials: true })
+  return response.data;
+}
+
+export const getRecommendations = async (data) => {
+  console.log(data)
+  const response = await axios.post(`${API_URL}/api/visitProduct/getRecommendations`, data, { withCredentials: true })
   return response.data
 }

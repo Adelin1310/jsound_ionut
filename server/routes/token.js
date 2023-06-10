@@ -28,7 +28,8 @@ router.post('/', async (req, res, next) => {
     res.status(200).json({
       success: true, user: {
         role: decodedToken.role.name,
-        username: decodedToken.username
+        username: decodedToken.username,
+        _sid:session._id
       }
     })
 
